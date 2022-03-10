@@ -93,7 +93,6 @@ while(norm(robotPos)~=norm(finishPos)) %norm = norma, alapvetően a 2-est haszn�
     % dirLeft=2;
     % dirUp=3;
     % dirDown=4;
-    %%% IDE TESSÉK ÍRNI
     if(abs(robotPos(1)-finishPos(1))>abs(robotPos(2)-finishPos(2)))
         if(robotPos(1)>finishPos(1))
             directionIndex=dirUp;
@@ -109,7 +108,6 @@ while(norm(robotPos)~=norm(finishPos)) %norm = norma, alapvetően a 2-est haszn�
     end
     
     
-    %%% EDDIG
     disp(directionIndex)
     
     % 2. feladat
@@ -120,15 +118,12 @@ while(norm(robotPos)~=norm(finishPos)) %norm = norma, alapvetően a 2-est haszn�
     % moveLeft=2;
     % moveUp=3;
     % moveDown=4;
-    %%% IDE TESSÉK ÍRNI
     [maxRuleVal, movementIndex] = max(ruleTable(directionIndex,:));
     
-    %%% EDDIG
     
     % 3. feladat   
     %az új lépés kiszámítása, azaz "newPos" változó sorának ill.
     %oszlopának inkrementálása ill. dekrementálása
-    %%% IDE TESSÉK ÍRNI
     switch(movementIndex)
         case moveRight
           newPos(2)=newPos(2)+1;
@@ -141,12 +136,11 @@ while(norm(robotPos)~=norm(finishPos)) %norm = norma, alapvetően a 2-est haszn�
     end
     
   
-    %%% EDDIG
     
     % 4. feladat
     %távolság ellenõrzése, ha közeledtünk => szabály megerõsítése, ha
     %távolodtunk => szabály lerontása
-    %%% IDE TESSÉK ÍRNI
+
     oldDistance=norm(robotPos-finishPos);
     newDistance=norm(newPos-finishPos);
     if(oldDistance>newDistance)
@@ -155,7 +149,6 @@ while(norm(robotPos)~=norm(finishPos)) %norm = norma, alapvetően a 2-est haszn�
         ruleTable(directionIndex,movementIndex)=maxRuleVal-30;
     end
         
-    %%% EDDIG   
     
     %display movement
     
